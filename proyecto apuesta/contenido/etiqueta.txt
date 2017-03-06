@@ -1,0 +1,18 @@
+<script type= text/javascript src = "" />
+
+
+
+function function1() {
+  var ul = document.getElementById("list");
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode("Four"));
+  li.setAttribute("id", "element4"); // added line
+  ul.appendChild(li);
+  alert(li.id);
+}
+
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onchange
+
+http://www.desarrollolibre.net/blog/tema/165/css/generando-reportes-pdfs-con-javascript#.WLo0hlU1_IU
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>

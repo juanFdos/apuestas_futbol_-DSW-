@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Apuestas principal</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="principal.css" />
+	<script type= "text/javascript" src = "principal.js"></script>
+	<script src="jsPDF/jspdf.js"></script>
+	<script type="text/javascript" src="jsPDF/from_html.js"></script>
+    <script type="text/javascript" src="jsPDF/split_text_to_size.js"></script>
+    <script type="text/javascript" src="jsPDF/standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jsPDF/cell.js"></script>
+    <script type="text/javascript" src="jsPDF/FileSaver.js"></script>
+	</head>
+	
+	<body>
+		<div id="contenedor">
+			
+			<div id="encabezado">
+			
+			</div>
+				
+			<div id="datosEntrada">
+			
+			<div>
+				<span>Numero de apostadores: <select id="selApostador" onchange="seleccionApuesta()">
+						<option value="0">Seleccione una opción</option>
+						<option value="2">2 Apostadores.</option>
+						<option value="3">3 Apostadores.</option>
+						<option value="4">4 Apostadores.</option>
+						<option value="5">5 Apostadores.</option>
+						<option value="6">6 Apostadores.</option>
+						<option value="7">7 Apostadores.</option>
+						<option value="8">8 Apostadores.</option>
+						<option value="9">9 Apostadores.</option>
+						<option value="10">10 Apostadores.</option>
+						<option value="11">11 Apostadores.</option>
+						<option value="12">12 Apostadores.</option>
+						<option value="13">13 Apostadores.</option>
+						<option value="14">14 Apostadores.</option>
+						<option value="15">15 Apostadores.</option>
+						<option value="16">16 Apostadores.</option>
+						<option value="17">17 Apostadores.</option>
+						<option value="18">18 Apostadores.</option>
+						<option value="19">19 Apostadores.</option>
+						<option value="20">20 Apostadores.</option>
+				</select></span>
+				</div>
+				
+				<div>
+				<span>Ingrese un valor a apostar: <input id = "valor"/></span>
+				</div>
+				
+				<div>
+				<span>Numero de jugadores: <select id="selJugador" onchange="seleccionJugador()">
+						<option value="0">Seleccione una opción</option>
+						<option value="2">2 Jugadores.</option>
+						<option value="3">3 Jugadores.</option>
+						<option value="4">4 Jugadores.</option>
+						<option value="5">5 Jugadores.</option>
+						<option value="6">6 Jugadores.</option>
+						<option value="7">7 Jugadores.</option>
+						<option value="8">8 Jugadores.</option>
+						<option value="9">9 Jugadores.</option>
+						<option value="10">10 Jugadores.</option>
+						<option value="11">11 Jugadores.</option>
+						<option value="12">12 Jugadores.</option>
+						<option value="13">13 Jugadores.</option>
+						<option value="14">14 Jugadores.</option>
+						<option value="15">15 Jugadores.</option>
+						<option value="16">16 Jugadores.</option>
+						<option value="17">17 Jugadores.</option>
+						<option value="18">18 Jugadores.</option>
+						<option value="19">19 Jugadores.</option>
+						<option value="20">20 Jugadores.</option>
+				</select></span>
+				</div>
+			</div>
+			
+			<div id="ppal">
+						
+				
+				<div id="apostador">
+					<ul id="listaApostador">
+					
+					</ul>
+					<h1>Apostadores.</h1>
+				</div>
+				
+				
+				<div id="juagador">
+				
+						<ul id="listaJugador">
+							
+						</ul>
+					<h1>Jugadores.</h1>
+				</div>
+				
+				<div>
+				<button id="boton" onclick ="generarPdf()" >sortear</button>
+				</div>
+				
+				</div>
+			
+			
+			<div id="footer">
+				&copy; 2017, Nombre de la cosa de apuestas.
+				<br />
+				Todas las marcas comerciales y marcas registradas
+				Este sitio son propiedad de sus respectivos propietarios.
+			</div>
+			
+		</div>
+	
+	</body>
