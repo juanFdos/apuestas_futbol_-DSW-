@@ -17,7 +17,7 @@ function seleccionApuesta()
 			li.addEventListener("click",cambiarNombre); // agrego un evento click
 			var p = document.createElement("p"); // creo un elemento p
 			var guia = i+1;
-			var cadena = 'apostador '+guia; // el id para reconocerlo
+			var cadena = 'Participante '+guia; // el id para reconocerlo
 			p.innerHTML =cadena;
 			p.setAttribute("id",'p'+cadena); // agrago un id para el p
 			li.setAttribute("id",cadena); // agrago un id para el li
@@ -41,7 +41,7 @@ function seleccionJugador()
 			li.addEventListener("click",cambiarNombre);
 			var p = document.createElement("p");
 			var guia = i+1;
-			var cadena = 'jugador '+guia;
+			var cadena = 'Jugador '+guia;
 			p.innerHTML =cadena;
 			p.setAttribute("id",'p'+cadena);
 			li.setAttribute("id",cadena); 
@@ -98,36 +98,36 @@ function generarPdf(ev, obj)
 		{
 		alert("Campo del valor no ha sido dilegenciado");
 		}
-		else if(Number.isNaN(apuesta))
+		else if(Number.isNaN(apuesta)) // si no es un valor numerico que han ingresado
 		{
 			alert("Campo del valor apostado esta mal diligenciado solo valores númerico.");
 			input.value = "";
-		}else
+		}else // datos correctos
 		{
 			var listaApostador = document.getElementById("listaApostador");
 			var listaJugador = document.getElementById("listaJugador");
 			
-			if(listaJugador.children.length == 0) 
+			if(listaJugador.children.length == 0) // no han seleccionado jugadores
 			{
-			alert("NO se a seleccionado ningun jugador minimo deben ser 2.");
+			alert("NO se ha seleccionado ningun jugador minimo deben ser 2.");
 					
 			}
-			else if(listaApostador.children.length == 0)
+			else if(listaApostador.children.length == 0) // no han seleccionado apostadores
 			{
 			alert("NO se a seleccionado ningun apostador minimo deben ser 2.");	
 			
-			}else if(listaJugador.children.length < listaApostador.children.length)
+			}else if(listaJugador.children.length < listaApostador.children.length) // hay mas participantes que jugadores
 			{
-				alert("NO se puede realizar la apuesta \n deben haber más jugadores que apostadores ");
+				alert("NO se puede realizar la apuesta \n deben haber más jugadores que participantes ");
 				
 			}else
 			{
-				var arregloJugador = obtenerElementos(listaJugador);
-				var arregloApostador = obtenerElementos(listaApostador);
-				var numero = Math.floor(arregloJugador.length/arregloApostador.length);
-				var aleatorio = crearAleatorio(arregloJugador.length);
+				var arregloJugador = obtenerElementos(listaJugador); // obtener le la lista html todos los textos
+				var arregloApostador = obtenerElementos(listaApostador);// obtener le la lista html todos los textos
+				var numero = Math.floor(arregloJugador.length/arregloApostador.length); // calcular el numero de jugadores por participante
+				var aleatorio = crearAleatorio(arregloJugador.length); // areglo aleatorio para realizar la rifa
 				//alert(aleatorio + "   el modulo " + numero);
-				crearPdf(arregloJugador,arregloApostador,aleatorio,numero,apuesta);
+				crearPdf(arregloJugador,arregloApostador,aleatorio,numero,apuesta); // invocar el metodo 
 			}
 			
 			
@@ -153,27 +153,29 @@ function crearAleatorio(n)
 	var aleatorio = new Array();
 	for(var i = 0; i<n; i++)
 	{
-		aleatorio.push(i);
+		aleatorio.push(i); // agregar un elemento al array
 	}
-	aleatorio.sort(function(a, b){return 0.5 - Math.random()});
+	aleatorio.sort(function(a, b){return 0.5 - Math.random()}); // generar el numero aleatorio
     return aleatorio;
 }
 
 function crearPdf(jugador, apostador, orden,n,input)
 {
-	 var pdf = new jsPDF('p', 'pt', 'ledger');
-	 var tabla = crearTabla(jugador, apostador, orden,n);
-	 pdf.setTextColor(204,0,0);
-	 pdf.text('Apuestas <nombre de las apuestas>.', 350, 50);
+	 var pdf = new jsPDF('p', 'pt', 'ledger'); // crear la instancia del documento
+	 var tabla = crearTabla(jugador, apostador, orden,n); // creo la tabla html 
+	 pdf.setTextColor(204,0,0); // cambio el color a rojo para el titulo
+	 pdf.text('Apuestas "EL MACHETICO".', 350, 50); // escribo el titulo
 	 
-	 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-	 var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-	 var f=new Date();
+	 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"); // arreglo con los meses
+	 var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"); // arreglo con los dias
+	 var f=new Date(); // instancia de la fecha
 	 var fecha = diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear()+ " hora: "+ f.getHours()+":"+f.getMinutes()+":"+f.getSeconds()+"."; 
-	 pdf.setTextColor(0,0,0);
-	 pdf.text(fecha, 250, 70);
-	 pdf.text("EL valor a ganar por cada jugador acertado es de: $ "+ input +" pesos colombianos.", 100, 100);
-	 pdf.text(" ",10,130);
+	 pdf.setTextColor(0,0,0); // canbio el color a negro
+	 pdf.text(fecha, 250, 70); // escribo la fecha
+	 
+	 pdf.text("EL valor a ganar por cada jugador acertado es de: $ "+ input +" pesos colombianos.", 100, 100); // escribo la condicion  del valor
+	 pdf.text(" ",10,130); // un salto de linea
+	 
 	 
 	 specialElementHandlers = {
                     '#bypassme' : function(element, renderer) {
@@ -181,65 +183,65 @@ function crearPdf(jugador, apostador, orden,n,input)
                     }
                 };
                 margins = {
-                    top : 120,
-                    bottom : 40,
-                    left : 40,
-                    width : 450
+                    top : 120, // posicion inicial de la tabla
+                    bottom : 40, // ancho de celda
+                    left : 40, // posicion izquierda
+                    width : 450 // tamaño max de la tabla
                 };
 
-                pdf.fromHTML(tabla.outerHTML, 
+                pdf.fromHTML(tabla.outerHTML,  // metodo que construye la tabla en el pdf
                 margins.left, 
                 margins.top, { 
                     'width' : margins.width, 
                     'elementHandlers' : specialElementHandlers
                 },
 
-                function(dispose) {
-					pdf.text('Gracias por utilizar nuestros servicios', 250, 1200);
-                    pdf.save('apuesta.pdf');
+                function(dispose) { // genera el archivo pdf para descargar 
+					pdf.text('Gracias por utilizar nuestros servicios', 250, 1200); // escibo un mensaje 
+                    pdf.save('apuesta.pdf'); // un nombre para el archivo
                 }, margins);
 	}
 	
 	
 	 function crearTabla(jugador, apostador, orden,n)
 	 {
-		var tabla  = document.createElement('table');
-		tabla.style.width  = '100px';
-		tabla.style.border = '1px solid black';
-		tabla.style.textAlign= 'justify';
-		tabla.innerHTML +=' <thead> <th>Apostador</th><th>Jugador</th> </tr>';
-		var tamaño = apostador.length*n, paso = 0,cuenta = 0, entrada = true;
+		var tabla  = document.createElement('table'); // creo la tabla
+		tabla.style.width  = '100px'; // tamaño
+		tabla.style.border = '1px solid black'; // bordes
+		tabla.style.textAlign= 'justify'; // jusificacion de texto
+		tabla.innerHTML +=' <thead> <th>Participante</th><th>Jugador</th> </tr>'; // inserto los titulos de la tabla
+		var tamaño = apostador.length*n, paso = 0,cuenta = 0, entrada = true; // variables de manejo
 
 		for(var i = 0; i < tamaño; i++)
 		{
-			var tr = tabla.insertRow();
+			var tr = tabla.insertRow(); // creo una fila
 			
-			for(var j = 0; j < 2; j++)
+			for(var j = 0; j < 2; j++) // dos columnas
 			{
 				
-                var td = tr.insertCell();
+                var td = tr.insertCell(); // creo una columna
 				if(j == 0)
 				{
-					if(paso <n && entrada)
+					if(paso <n && entrada) // condicion para el numero de jugadores por participante
 					{
-						td.appendChild(document.createTextNode(apostador[cuenta]));
+						td.appendChild(document.createTextNode(apostador[cuenta])); // asigno el participante
 						td.style.textAlign = 'justify';
 						paso += 1;
 						cuenta+= 1;
 						entrada = false;
 					}else
 					{
-						td.appendChild(document.createTextNode("  "));
+						td.appendChild(document.createTextNode("  ")); // creo el espacio vacio
 						td.style.textAlign = 'justify';
 						paso += 1;
 					}
 				}else
 				{ 
-					var aux = orden[i];
-					td.appendChild(document.createTextNode(jugador[aux]));
+					var aux = orden[i]; // capturar el numero aleatorio
+					td.appendChild(document.createTextNode(jugador[aux])); // asginar el jugador
 					td.style.textAlign = 'justify';
 				} 
-				if(paso == n)
+				if(paso == n) // condicion de retorno para otro jugador
 				{
 					paso = 0;
 					entrada = true;
@@ -247,7 +249,13 @@ function crearPdf(jugador, apostador, orden,n,input)
             }
         }
     
-		return tabla;
+		return tabla; // retorno la tabla 
 	}
+
+	function regresar()
+{
+location.href="../inicio/inicio.html";
+}
+
 
 	

@@ -2,7 +2,7 @@
 {
 body
  {
-	background-color: MidnightBlue;
+	background-color: cornsilk;
 	font-family: Georgia, Times, serif;
 	margin: auto;
  }
@@ -26,7 +26,7 @@ button
 	border-radius: 5px 30px 45px 60px;
 	width: 30%;
 	font-size: x-large;
-	background-color: lightcyan;
+	background-color: beige;
  }
 
   ol 
@@ -53,7 +53,7 @@ button
 
 #contenedor
  {
-	background-color:#EFE5D0;
+	background-color: black;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -66,28 +66,32 @@ button
 
 #encabezado
  {
-	background-color: DodgerBlue;
-	padding: 2ex;
+	background-color: antiquewhite;
+    padding: 8ex;
 	margin: 1ex;
-	text-align: center;
-	display: flex;
+	text-align: right;
+    background-image: url('../images/Logo.jpg');
+    background-repeat: no-repeat;
+    font-size: 3ex; 
+    padding-left: 20ex;
 
  }
 
 #datosPagina
  {
-	background-color: DodgerBlue;
+	background-color: aquamarine;
 	padding: 2ex;
 	margin: 1ex;
 	text-align: center;
 	display: flex;
+    
  }	
 
 
 #datosPagina>div
  {
 	display: inline-block;
-	background: DarkSalmon ;
+	background-color: burlywood;
 	text-align: center;
 	padding: 2ex;
 	margin: 1ex;
@@ -103,4 +107,115 @@ button
 	margin: 1ex;
  }
  
+}
+
+@media only screen and (max-device-width: 480px)
+{
+body
+ {
+	background-color: cornsilk;
+	font-family: Georgia, Times, serif;
+	margin: auto;
+ }
+
+div {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+ 
+p
+ {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+ } 
+
+button
+ {		
+	border-radius: 5px 30px 45px 60px;
+	width: 60%;
+	font-size: x-large;
+	background-color: beige;
+ }
+
+  ol 
+  {
+    Float: right;
+    width: 100%;
+    list-style-position: inside;
+    text-align: center;
+	justify-content: center;
+	align-items: center;
+	font-size: x-large;
+  }
+  
+
+
+  li
+  {
+ 
+	padding: 2ex;
+	margin: 1ex;
+	font-size: xx-large;
+  } 
+
+
+#contenedor
+ {
+	background-color: black;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+
+ }	
+
+#encabezado
+ {
+	background-color: antiquewhite;
+    padding: 8ex;
+	margin: 1ex;
+	text-align: right;
+    background-image: url('../images/Logo.jpg');
+    background-repeat: no-repeat;
+    font-size: 3ex; 
+    padding-left: 25ex;
+
+ }
+
+#datosPagina
+ {
+	background-color: aquamarine;
+	padding: 2ex;
+	margin: 1ex;
+	text-align: center;
+	display: block;
+    
+ }	
+
+
+#datosPagina>div
+ {
+	display: inline-block;
+	background-color: burlywood;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+	font-size: x-large;
+ }
+
+
+
+#footer
+ {
+	background-color:#EFE5D0;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+ }
 }
