@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Apuestas principal</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="perfil.css" />
+	<script type= "text/javascript" src = "perfil.js"></script>
+	
+		<script src="../contenido/jsPDF/jspdf.js"></script>
+	<script type="text/javascript" src="../contenido/jsPDF/from_html.js"></script>
+    <script type="text/javascript" src="../contenido/jsPDF/split_text_to_size.js"></script>
+    <script type="text/javascript" src="../contenido/jsPDF/standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="../contenido/jsPDF/cell.js"></script>
+    <script type="text/javascript" src="../contenido/jsPDF/FileSaver.js"></script>
+	
+
+	 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- Global CSS -->
+    <!--><link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css"><!-->
+    <!-- Plugins CSS -->    
+    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css">
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+	
+	    <!-- Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-migrate-1.2.1.min.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery.easing.1.3.js"></script>   
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script> 
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/js/main.js"></script>   
+	
+				    <!-- Auth0 lock script -->
+    <script src="//cdn.auth0.com/js/lock/10.13/lock.min.js"></script>
+    <script src="auth0-variables.js"></script>
+	
+	
+	</head>
+
+	<body>
+	
+	  <!-- ******HEADER****** --> 
+	 <header id="header" class="header">  
+        <div class="container">            
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                   <span class="logo-title"  id="nickname"></span>
+                </a>
+			</h1><!--//logo--> 
+			    
+				<nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->            
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Inicio</a></li>
+                          <li class="nav-item"><a class="scrollto" href="#about" type="submit" id="btn-login">Sing_In</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#features" type="submit" id="btn-logout" style="display:none">Sign_Out</a></li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+	
+		    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header">
+        <div class="container text-center">
+            <h2 class="title">Mache<span class="highlight">Tico</span></h2>
+            <p class="intro">apueste feliz, apueste contento...</p>
+            
+			 <div class="btns">
+               <button type="submit" class="btn btn-cta-secondary" onclick ="apostar()"id="apostar"style="display:none" >APOSTAR.</button>
+            </div>
+			
+            
+        </div><!--//container-->
+		
+		
+        <div class="social-media">
+            <div class="social-media-inner container text-center">     
+            </div>
+        </div>
+    </section><!--//promo-->
+	
+	
+
+	
+	 <!-- ******contacto****** --> 
+     <section id="contact" class="contact section has-pattern" style="display:none">
+        <div class="container">
+            <div class="contact-inner">
+                <h2 class="title  text-center">Hola!</h2>
+                <p class="intro  text-center"> Bienvenido a nuestro sitio.<br />No dude en ponerse en contacto si tiene alguna pregunta o sugerencia.</p>
+                <div class="author-message">                      
+                    <div class="profile">
+						<img class="img-responsive" alt="avatar" id="avatar" style="display:none"/>
+                    </div><!--//profile-->
+                    <div class="speech-bubble">
+                        <h3 class="sub-title">¿Quieres empezar a apostar?</h3>
+                        <p></p>
+                        <p><strong>Ayudanos:</strong> Si te gusta nuestro trabajo no dudes a la hora de compartir
+						comparte con tus amigos nuestra página.</p> 
+                       
+                    </div><!--//speech-bubble-->                        
+                </div><!--//author-message-->
+              
+
+            </div><!--//contact-inner-->
+        </div><!--//container-->
+    </section><!--//contact-->  
+	
+	
+	 <!-- ******ABOUT****** --> 
+    <section id="apost" class="contact section has-pattern" >
+	
+        <div class="container">
+			<div class="contact-inner">
+			 <div id="juagador">
+				
+				<h1 class="title  text-center">Tus apuestas.</h1>
+				<h4 id= 'nApuesta'> </h4>
+				<br><br>
+				</div>
+				
+				<div>
+				<table id= 'tabla'>
+				</table>
+				</div>
+			
+			</div><!--//author-message-->
+		</div><!--//container-->
+    </section><!--//about-->
+	
+	
+		 <!-- ******FOOTER****** --> 
+    <footer class="footer">
+	
+	
+        <div class="container text-center">
+            <small class="copyright">
+			&copy; 2017, Apuestas "EL MACHETICO".
+			<br />
+				Todas las marcas comerciales y marcas registradas
+				Este sitio son propiedad de sus respectivos propietarios.
+			</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+			
+
+	
+	</body>

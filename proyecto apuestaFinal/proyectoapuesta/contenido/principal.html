@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Apuestas principal</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="principal.css" />
+	<script type= "text/javascript" src = "principal.js"></script>
+	<script src="jsPDF/jspdf.js"></script>
+	<script type="text/javascript" src="jsPDF/from_html.js"></script>
+    <script type="text/javascript" src="jsPDF/split_text_to_size.js"></script>
+    <script type="text/javascript" src="jsPDF/standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jsPDF/cell.js"></script>
+    <script type="text/javascript" src="jsPDF/FileSaver.js"></script>
+	
+	
+	 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- Global CSS -->
+    <!--><link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css"><!-->
+    <!-- Plugins CSS -->    
+    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css">
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+	
+	    <!-- Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-migrate-1.2.1.min.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery.easing.1.3.js"></script>   
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script> 
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/js/main.js"></script>   
+	
+	
+	</head>
+	
+	<body>
+	
+		  <!-- ******HEADER****** --> 
+	 <header id="header" class="header">  
+        <div class="container">            
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                   <span class="logo-title"  id="nombre"></span>
+                </a>
+			</h1><!--//logo--> 
+			    
+				<nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->            
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+	
+	
+	
+    <section id="promo" class="promo section offset-header">
+        <div class="container text-center">
+            <h2 class="title">Mache<span class="highlight">Tico</span></h2>
+            <p class="intro">apueste feliz, apueste contento...</p>
+			
+            <div id="datosEntrada">
+				<div>
+                <span class="btn btn-cta-cuarto">Número de participantes: <select id="selApostador" onchange="seleccionApuesta()">
+						<option value="0">Seleccione una opción</option>
+						<option value="2">2 Participantes.</option>
+						<option value="3">3 Participantes.</option>
+						<option value="4">4 Participantes.</option>
+						<option value="5">5 Participantes.</option>
+						<option value="6">6 Participantes.</option>
+						<option value="7">7 Participantes.</option>
+						<option value="8">8 Participantes.</option>
+						<option value="9">9 Participantes.</option>
+						<option value="10">10 Participantes.</option>
+						<option value="11">11 Participantes.</option>
+						<option value="12">12 Participantes.</option>
+						<option value="13">13 Participantes.</option>
+						<option value="14">14 Participantes.</option>
+						<option value="15">15 Participantes.</option>
+						<option value="16">16 Participantes.</option>
+						<option value="17">17 Participantes.</option>
+						<option value="18">18 Participantes.</option>
+						<option value="19">19 Participantes.</option>
+						<option value="20">20 Participantes.</option>
+				</select></span>
+			 </div>
+				
+			 <div>
+				 <span class="btn btn-cta-cuarto">Número de jugadores: <select id="selJugador" onchange="seleccionJugador()">
+						<option value="0">Seleccione una opción</option>
+						<option value="2">2 Jugadores.</option>
+						<option value="3">3 Jugadores.</option>
+						<option value="4">4 Jugadores.</option>
+						<option value="5">5 Jugadores.</option>
+						<option value="6">6 Jugadores.</option>
+						<option value="7">7 Jugadores.</option>
+						<option value="8">8 Jugadores.</option>
+						<option value="9">9 Jugadores.</option>
+						<option value="10">10 Jugadores.</option>
+						<option value="11">11 Jugadores.</option>
+						<option value="12">12 Jugadores.</option>
+						<option value="13">13 Jugadores.</option>
+						<option value="14">14 Jugadores.</option>
+						<option value="15">15 Jugadores.</option>
+						<option value="16">16 Jugadores.</option>
+						<option value="17">17 Jugadores.</option>
+						<option value="18">18 Jugadores.</option>
+						<option value="19">19 Jugadores.</option>
+						<option value="20">20 Jugadores.</option>
+				</select></span>
+				</div>
+				
+				<div>
+                <span class="btn btn-cta-tercer">Ingrese un valor a apostar: <input id = "valor"/> </span>
+				</div>
+				 
+            </div>        
+        </div><!--//container-->
+    </section><!--//promo-->
+	
+ 
+	
+			    <!-- ******ABOUT****** --> 
+    <section id="apost" class="contact section has-pattern">
+	
+        <div class="container">
+			<div class="contact-inner">
+				<div id="apostador">
+					
+					  <h1 class="title  text-center">Participantes.</h1>
+					  <ul id="listaApostador"></ul>
+					
+				</div>
+			</div><!--//author-message-->
+		</div><!--//container-->
+    </section><!--//about-->
+	
+	 <section id="contact" class="contact section has-pattern">
+        <div class="container">
+            <div class="contact-inner">
+			
+                <div id="juagador">
+				
+				<h1 class="title  text-center">Jugadores.</h1>
+				<ul id="listaJugador"></ul>
+					
+				</div>
+           
+                </div><!--//author-message-->
+            </div><!--//contact-inner-->
+    </section><!--//contact-->  
+	
+	
+
+	
+			
+		 <!-- ******FOOTER****** --> 
+    <footer class="footer">
+		 <div class="social-media">
+            <div class="social-media-inner container text-center">  
+			
+			<div id="datosEntrada">
+				   <div>
+                <a class="btn btn-cta-tercer" onclick="generarPdf()">SORTEAR.</a>
+				</div>
+				<div>
+                <a class="btn btn-cta-cuarto" onclick ="regresar()" >VOLVER.</a>
+				</div>
+                 </div>
+			
+            </div>
+        </div>
+	
+        <div class="container text-center">
+            <small class="copyright">
+			&copy; 2017, Apuestas "EL MACHETICO".
+			<br />
+				Todas las marcas comerciales y marcas registradas
+				Este sitio son propiedad de sus respectivos propietarios.
+			</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+			
+	
+	
+	</body>

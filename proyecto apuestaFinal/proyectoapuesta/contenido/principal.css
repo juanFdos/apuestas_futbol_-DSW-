@@ -1,0 +1,253 @@
+@media only screen and (min-width: 800px) and (orientation: landscape)
+{
+body
+ {
+	
+	font-family: Georgia, Times, serif;
+	
+ }
+
+
+ 
+p
+ {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+ } 
+
+button
+ {		
+	border-radius: 5px 30px 45px 60px;
+	width: 30%;
+	font-size: x-large;
+	background-color: beige;
+ }
+
+  ul 
+  {
+    Float: right;
+    width: 100%;
+    list-style-position: inside;
+    text-align: center;
+	justify-content: center;
+	align-items: center;
+  }
+  
+
+
+  li
+  {
+ 
+    Float: left;
+    Width: 15%;
+	padding: 2ex;
+	margin: 1ex;
+  } 
+
+
+#contenedor
+ {
+	background-color: black;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+
+ }	
+
+#encabezado
+ {
+	background-color: antiquewhite;
+	padding: 8ex;
+	margin: 1ex;
+	text-align: right;
+    background-image: url('../images/Logo.jpg');
+    background-repeat: repeat;
+    font-size: 3ex; 
+    padding-left: 20ex;
+ }
+
+#ppal
+ {
+	background-color: aquamarine;
+	padding: 2ex;
+	margin: 1ex;
+	text-align: center;
+	display: block;
+ }	
+
+
+#ppal>div
+ {
+ 	display: block;
+	background-color:burlywood ;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+ }
+
+#datosEntrada>div
+ {
+	display: inline-block;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+ }
+
+#apost
+{
+	background: #f5f5f5;
+	color: black;
+}
+ 
+#juagador
+ {
+	list-style-image: url('../images/balon.png');
+	color: black;
+ }
+
+#apostador
+ {
+list-style-image: url('../images/usuario2.jpg');
+ }
+
+
+#footer
+ {
+	background-color: #EFE5D0;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+ }
+ 
+}
+
+@media only screen and (max-device-width: 480px)
+{
+body
+ {
+	background-color: cornsilk;
+	font-family: Georgia, Times, serif;
+	margin: auto;
+ }
+
+div {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+ 
+p
+ {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+ } 
+
+button
+ {		
+	border-radius: 5px 30px 45px 60px;
+	width: 45%;
+	font-size: x-large;
+	background-color: beige;
+ }
+
+  ul 
+  {
+    Float: right;
+    width: 100%;
+    list-style-position: inside;
+    text-align: center;
+	justify-content: center;
+	align-items: center;
+  }
+  
+
+
+  li
+  {
+ 
+    Float: left;
+    Width: 15%;
+	padding: 2ex;
+	margin: 1ex;
+  } 
+
+
+#contenedor
+ {
+	background-color: black;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+
+ }	
+
+#encabezado
+ {
+	background-color: antiquewhite;
+	padding: 8ex;
+	margin: 1ex;
+	text-align: right;
+    background-image: url('../images/Logo.jpg');
+    background-repeat: no-repeat;
+    font-size: 3ex; 
+    padding-left: 20ex;
+ }
+
+#ppal
+ {
+	background-color: aquamarine;
+	padding: 2ex;
+	margin: 1ex;
+	text-align: center;
+	display: block;
+ }	
+
+
+#ppal>div
+ {
+ 	display: block;
+	background-color:burlywood ;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+ }
+
+ 
+#datosEntrada>div
+ {
+	display: block;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+ }
+
+#juagador
+ {
+	list-style-image: url('../images/balon.png');
+ }
+
+#apostador
+ {
+list-style-image: url('../images/usuario2.jpg');
+ }
+
+
+#footer
+ {
+	background-color: #EFE5D0;
+	text-align: center;
+	padding: 2ex;
+	margin: 1ex;
+ }
+}
