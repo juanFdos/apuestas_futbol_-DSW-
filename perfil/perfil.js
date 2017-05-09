@@ -85,7 +85,7 @@ window.onload = function() {
 
   var logout = function() {
     localStorage.removeItem('id_token');
-    window.location.href = "/inicio/inicio.html";
+    window.location.href = "/inicio/Inicio.html";
   };
 
   retrieve_profile();
@@ -190,7 +190,8 @@ window.onload = function() {
                 margins.left, 
                 margins.top, { 
                     'width' : margins.width, 
-                    'elementHandlers' : specialElementHandlers
+                    'elementHandlers' : specialElementHandlers,
+					'text-align' : 'center'
                 },
 
                 function(dispose) { // genera el archivo pdf para descargar 
@@ -203,13 +204,14 @@ window.onload = function() {
 	}
 	
 	
-	 function crearTabla(rifa)//(jugador, apostador, orden,n)
+	  function crearTabla(rifa)//(jugador, apostador, orden,n)
 	 {
 		var tabla  = document.createElement('table'); // creo la tabla
 		tabla.style.width  = '100px'; // tamaño
 		tabla.style.border = '1px solid black'; // bordes
-		tabla.style.textAlign= 'justify'; // jusificacion de texto
-		tabla.innerHTML +=' <thead> <th>Participante</th><th>Jugador</th> </tr>'; // inserto los titulos de la tabla
+		tabla.style.textAlign= 'center'; // jusificacion de texto
+		tabla.style.margin = '0 auto';
+		tabla.innerHTML +=" <thead> <th style= text-align: 'center'; >Participante</th><th style= text-align: 'center';>Jugador</th> </tr>"; // inserto los titulos de la tabla
 		var tamaño = rifa.arregloApostador.length*rifa.numXplay, paso = 0,cuenta = 0, entrada = true; // variables de manejo
 
 		for(var i = 0; i < tamaño; i++)
@@ -225,21 +227,21 @@ window.onload = function() {
 					if(paso <rifa.numXplay && entrada) // condicion para el numero de jugadores por participante
 					{
 						td.appendChild(document.createTextNode(rifa.arregloApostador[cuenta])); // asigno el participante
-						td.style.textAlign = 'justify';
+						td.style.textAlign = 'center';
 						paso += 1;
 						cuenta+= 1;
 						entrada = false;
 					}else
 					{
 						td.appendChild(document.createTextNode("  ")); // creo el espacio vacio
-						td.style.textAlign = 'justify';
+						td.style.textAlign = 'center';
 						paso += 1;
 					}
 				}else
 				{ 
 					var aux = rifa.arregloAleatorio[i]; // capturar el numero aleatorio
 					td.appendChild(document.createTextNode(rifa.arregloJugador[aux])); // asginar el jugador
-					td.style.textAlign = 'justify';
+					td.style.textAlign = 'center';
 				} 
 				if(paso == rifa.numXplay) // condicion de retorno para otro jugador
 				{
